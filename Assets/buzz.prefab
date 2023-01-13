@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 883517153494181310}
   - component: {fileID: 506991988932640518}
   - component: {fileID: 506991988932640517}
+  - component: {fileID: -5638634790244775707}
   m_Layer: 0
   m_Name: buzz
   m_TagString: enemigo
@@ -65,6 +66,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 122
   m_CollisionDetection: 0
+--- !u!114 &-5638634790244775707
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 506991988932640516}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c61d398310bb264595183a699054dd0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  explosion: {fileID: 8856629437242833163, guid: fca4c80c52330524cbd4309c118af89c, type: 3}
 --- !u!1 &4407487330194137013
 GameObject:
   m_ObjectHideFlags: 0
