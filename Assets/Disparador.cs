@@ -77,12 +77,13 @@ public class Disparador : MonoBehaviour
     {
         vidas--;
 
-
+        Sethud();
     }
 
     public void puntos()
     {
         score++;
+        Sethud();
     }
 
     public void Sethud()
