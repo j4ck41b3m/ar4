@@ -2,14 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem.HID;
+using UnityEngine.InputSystem.XR;
 
 public class Bala : MonoBehaviour
 {
-    public GameObject explosion;
+    public GameObject explosion, explosion2, controlador;
     // Start is called before the first frame update
     void Start()
     {
-        Invoke("Destroy", 2f);
+        Invoke("Destroya", 2f);
+        controlador = GameObject.Find("Controller");
+
     }
 
     // Update is called once per frame
@@ -24,15 +27,27 @@ public class Bala : MonoBehaviour
             Debug.Log("Detecto Colision");
             if (other.transform.tag == "enemigo")
             {
-                Destroy(other.transform.gameObject);
+            controlador.GetComponent<Disparador>().puntos();
+
+            Destroy(other.transform.gameObject);
                 Debug.Log("Destruyo Enemigo");
-                Instantiate(explosion, other.transform.position, other.transform.rotation);
-                
+            Instantiate(explosion, other.transform.position, other.transform.rotation);
+                Invoke("Destroya", 0.1f);
+
             }
-        
+            else if (other.CompareTag("bomb"))
+            {
+               controlador.GetComponent<Disparador>().Daño();
+
+            Destroy(other.transform.gameObject);
+                Instantiate(explosion2, other.transform.position, other.transform.rotation);
+                Invoke("Destroya", 0.1f);
+ 
+            }
+
     }
 
-    public void Destroy()
+    public void Destroya()
     {
         Destroy(gameObject);
     }

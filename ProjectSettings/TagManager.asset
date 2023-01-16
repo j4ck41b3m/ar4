@@ -6,11 +6,13 @@ TagManager:
   tags:
   - enemigo
   - plane
+  - enemy
+  - bomb
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - objetos
   - Water
   - UI
   - 

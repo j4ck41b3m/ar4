@@ -4,11 +4,12 @@ using UnityEngine;
 
 public class Enemigo : MonoBehaviour
 {
-    public GameObject explosion;
+    public GameObject explosion, controller;
     // Start is called before the first frame update
     void Start()
     {
-        
+        controller = GameObject.Find("Controller");
+
     }
 
     // Update is called once per frame
@@ -24,6 +25,7 @@ public class Enemigo : MonoBehaviour
         {
             Debug.Log("Choca con plano");
             Instantiate(explosion, collision.transform.position, collision.transform.rotation);
+            controller.GetComponent<Disparador>().Daño();
             Destroy(gameObject);
         }
     }
